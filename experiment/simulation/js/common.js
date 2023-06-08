@@ -16,6 +16,7 @@ function random(min, max) {
 }
 function std_deviation(num) {
     let std = num / 100.0;
+    std = std / 2;
     let dev = num - random(-std, std);
     return dev;
 }
@@ -37,7 +38,7 @@ function regression_linear(x, y) {
     return (pol);
 }
 function newton_raphson(a, b, c) {
-    let root = 0.2;
+    let root = 0.1;
     for (let i = 0; i <= 100; i++) {
         root = root - f(a, b, c, root) / df(a, b, c, root);
     }

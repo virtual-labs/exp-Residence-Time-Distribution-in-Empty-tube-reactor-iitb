@@ -117,9 +117,9 @@ function complete_obtab_1() {
       <td>${i + 1}</td>
       <td>${obt_1_data[i][0]}</td>
       <td>${obt_1_data[i][1]}</td>
-      <td>${10 + i + 1}</td>
-      <td>${obt_1_data[10 + i][0]}</td>
-      <td>${obt_1_data[10 + i][1]}</td>
+      <td>${11 + i + 1}</td>
+      <td>${obt_1_data[11 + i][0]}</td>
+      <td>${obt_1_data[11 + i][1]}</td>
       `;
         table_body.append(row);
     }
@@ -142,9 +142,9 @@ function complete_obtab_2() {
       <td>${i + 1}</td>
       <td>${obt_2_data[i][0]}</td>
       <td>${obt_2_data[i][1]}</td>
-      <td>${10 + i + 1}</td>
-      <td>${obt_2_data[10 + i][0]}</td>
-      <td>${obt_2_data[10 + i][1]}</td>
+      <td>${11 + i + 1}</td>
+      <td>${obt_2_data[11 + i][0]}</td>
+      <td>${obt_2_data[11 + i][1]}</td>
       `;
         table_body.append(row);
     }
