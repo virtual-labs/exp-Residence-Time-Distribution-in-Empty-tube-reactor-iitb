@@ -3,6 +3,9 @@ var data = [];
 var data1 = [];
 function activity6() {
     pp.clearleftpannel();
+    pp.clearrightpannel();
+    pp.addoffcanvas(3);
+    pp.showtitle(`<p id="exp-title" style="width:130%">Time vs E(t) Graph</p>`, 3);
     draw_chart();
 }
 function draw_chart() {
@@ -39,10 +42,6 @@ function draw_chart() {
                     borderColor: 'blue',
                     tension: 0.5,
                     showLine: true,
-                    // yAxisID: 'A',
-                    // borderWidth: 1,
-                    // borderColor: "green",
-                    // backgroundColor: "rgba(34, 139, 34, 0.5)",
                 },
                 {
                     label: 'Flow rate = 400 cm^3/min',

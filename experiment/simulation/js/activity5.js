@@ -1,4 +1,4 @@
-var verify_summations_btn_2 = `<button id="panel1_btn" class="btn btn-primary" onclick="verify_summations_2();" style="position: absolute; bottom: 12vh; width: 90%;"> Display Observation Table</button>`;
+var verify_summations_btn_2 = `<button id="panel1_btn" class="btn btn-primary" onclick="verify_summations_2();" style="position: absolute; bottom: 3vh; width: 90%;"> Verify</button>`;
 function complete_main_table_2() {
     document.getElementById('hide_panel3').click();
     pp.clearleftpannel();
@@ -51,43 +51,41 @@ function complete_main_table_2() {
     </tbody>
   </table>
 
-  <br>
-
   <div class="row" style="font-size: calc(0.7vw + 8px);"> 
 
   <div class="col-6">&Sigma; C<sub>i</sub> &Delta;t<sub>i</sub> => </div>  
-  <div class="col-6"><input disabled type="text" name="" id="act4-tab3-inp1" value="${sum_c1_delta_t_2.toFixed(2)}"></div>
+  <div class="col-4">${sum_c1_delta_t_2.toFixed(2)}</div>
 
   <br>
 
 
 
   <div class="col-6">&Sigma; C<sub>i</sub> t<sub>i</sub> &Delta;t<sub>i</sub> => </div>  
-  <div class="col-6"><input disabled type="text" id="act4-tab3-inp2" value="${sum_ci_ti_delta_t_2.toFixed(2)}"></div>
+  <div class="col-4">${sum_ci_ti_delta_t_2.toFixed(2)}</div>
 
   <br>
 
   <div class="col-6">&Sigma; C<sub>i</sub> ti<sup>2</sup> &Delta;t<sub>i</sub> => </div>  
-  <div class="col-6"><input disabled type="text" name="" id="act4-tab3-inp3" value="${sum_ci_ti_ti_delta_t_2.toFixed(2)}"></div>
+  <div class="col-4">${sum_ci_ti_ti_delta_t_2.toFixed(2)}</div>
 
 
   <br>
 
   <div class="col-6">Mean Residence Time, <span style="border-top: 1px solid black;
   ">t</span> => </div>  
-  <div class="col-6"><input type="text" name="" id="act4-tab3-inp4"></div>
+  <div class="col-4"><input style="width:100%" type="text" name="" id="act4-tab3-inp4"></div>
 
   <br>
 
 
   <div class="col-6">Varience, &sigma;<sup>2</sup> =></div>  
-  <div class="col-6"><input type="text" name="" id="act4-tab3-inp5"></div>
+  <div class="col-4"><input style="width:100%" type="text" name="" id="act4-tab3-inp5"></div>
 
   <br>
 
 
   <div class="col-6">Dispersion Number, (D/uL) => </div>  
-  <div class="col-6"><input type="text" name="" id="act4-tab3-inp6"></div>
+  <div class="col-4"><input style="width:100%" type="text" name="" id="act4-tab3-inp6"></div>
 
   </div>
   </div>
@@ -124,15 +122,18 @@ function verify_summations_2() {
     //     return;
     // }
     if (!verify_values(parseFloat(val4.value), t_bar_2)) {
-        console.log("please correct the Mean Residence value");
+        console.log(`Mean Residence value ${t_bar_2}`);
+        alert("please correct the Mean Residence value");
         return;
     }
     if (!verify_values(parseFloat(val5.value), sigma_2)) {
-        console.log("please correct the Varience value");
+        console.log(`Varience value ${sigma_2}`);
+        alert("please correct the Varience value");
         return;
     }
     if (!verify_values(parseFloat(val6.value), root_2)) {
-        console.log("please correct the dispersion value value");
+        console.log(`dispersion value value ${root_2}`);
+        alert("please correct the dispersion value value");
         return;
     }
     // pp.addtorightpannel(act5_ob_btn, 3);
