@@ -18,7 +18,7 @@ var first_set_verified_1 = false;
 var first_set_verified_2 = false;
 var act4_btn_1 = `<button id="panel1_btn" class="btn btn-primary" onclick="complete_main_table_1();" style="
 position: absolute; bottom: 12vh; width: 90%;"> Display Observation Table</button>`;
-var verify_summations_btn = `<button id="panel1_btn" class="btn btn-primary" onclick="verify_summations();" style="position: absolute; bottom: 12vh; width: 90%;"> Display Observation Table</button>`;
+var verify_summations_btn = `<button id="panel1_btn" class="btn btn-primary" onclick="verify_summations();" style="position: absolute; bottom: 3vh; width: 90%;"> Verify</button>`;
 var move_to_act5 = `<button id="panel1_btn" class="btn btn-primary" onclick="complete_main_table_2();" style="position: absolute; bottom: 12vh; width: 90%;"> Display Observation Table</button>`;
 function activity4() {
     tau_1 = (vol_of_reactor * 60) / flow_rate_1;
@@ -31,8 +31,8 @@ function activity4() {
     calculate_sum_val_tab1();
     calculate_sum_val_tab2();
     main_table = `
-    <div id="act5-main-table" class="table-responsive">
-<table  class="table" style="height: 95% !important;">
+    <div id="act5-main-table" style="height: 100%" class="table-responsive">
+<table  class="table" >
     <thead>
       <tr>
         <th scope="col">Sr No.</th>
@@ -178,26 +178,32 @@ function act5_verify_obtable_1() {
         return;
     }
     if (!verify_values(parseFloat(val2.value), obt_1_data[0][3])) {
+        console.log(parseFloat(val2.value), obt_1_data[0][3]);
         alert("please correct the delta ti value");
         return;
     }
     if (!verify_values(parseFloat(val3.value), obt_1_data[0][4])) {
+        console.log(parseFloat(val3.value), obt_1_data[0][4]);
         alert("please correct the Ci delta ti value");
         return;
     }
     if (!verify_values(parseFloat(val4.value), obt_1_data[0][5])) {
+        console.log(parseFloat(val4.value), obt_1_data[0][5]);
         alert("please correct the Ci ti delta ti value");
         return;
     }
     if (!verify_values(parseFloat(val5.value), obt_1_data[0][6])) {
+        console.log(parseFloat(val5.value), obt_1_data[0][6]);
         alert("please correct the E(t) value");
         return;
     }
     if (!verify_values(parseFloat(val6.value), obt_1_data[0][7])) {
+        console.log(parseFloat(val6.value), obt_1_data[0][7]);
         alert("please correct the ELFR value");
         return;
     }
     if (!verify_values(parseFloat(val7.value), obt_1_data[0][8])) {
+        console.log(parseFloat(val7.value), obt_1_data[0][8]);
         alert("please correct the Ci ti^2 delta ti value");
         return;
     }
@@ -226,26 +232,32 @@ function act5_verify_obtable_11() {
         return;
     }
     if (!verify_values(parseFloat(val2.value), obt_1_data[1][3])) {
+        console.log(parseFloat(val2.value), obt_1_data[1][3]);
         alert("please correct the delta ti value");
         return;
     }
     if (!verify_values(parseFloat(val3.value), obt_1_data[1][4])) {
+        console.log(parseFloat(val3.value), obt_1_data[1][4]);
         alert("please correct the Ci delta ti value");
         return;
     }
     if (!verify_values(parseFloat(val4.value), obt_1_data[1][5])) {
+        console.log(parseFloat(val4.value), obt_1_data[1][5]);
         alert("please correct the Ci ti delta ti value");
         return;
     }
     if (!verify_values(parseFloat(val5.value), obt_1_data[1][6])) {
+        console.log(parseFloat(val5.value), obt_1_data[1][6]);
         alert("please correct the E(t) value");
         return;
     }
     if (!verify_values(parseFloat(val6.value), obt_1_data[1][7])) {
+        console.log(parseFloat(val6.value), obt_1_data[1][7]);
         alert("please correct the ELFR value");
         return;
     }
     if (!verify_values(parseFloat(val7.value), obt_1_data[1][8])) {
+        console.log(parseFloat(val7.value), obt_1_data[1][8]);
         alert("please correct the Ci ti^2 delta ti value");
         return;
     }
@@ -309,43 +321,42 @@ function complete_main_table_1() {
     </tbody>
   </table>
 
-  <br>
 
   <div class="row" style="font-size: calc(0.7vw + 8px);"> 
 
   <div class="col-6">&Sigma; C<sub>i</sub> &Delta;t<sub>i</sub> => </div>  
-  <div class="col-6"><input disabled type="text" name="" id="act4-tab3-inp1" value="${sum_c1_delta_t_1.toFixed(2)}"></div>
+  <div class="col-4">${sum_c1_delta_t_1.toFixed(2)}</div>
 
   <br>
 
 
 
   <div class="col-6">&Sigma; C<sub>i</sub> t<sub>i</sub> &Delta;t<sub>i</sub> => </div>  
-  <div class="col-6"><input disabled type="text" id="act4-tab3-inp2" value="${sum_ci_ti_delta_t_1.toFixed(2)}"></div>
+  <div class="col-4">${sum_ci_ti_delta_t_1.toFixed(2)}</div>
 
   <br>
 
   <div class="col-6">&Sigma; C<sub>i</sub> ti<sup>2</sup> &Delta;t<sub>i</sub> => </div>  
-  <div class="col-6"><input disabled type="text" name="" id="act4-tab3-inp3" value="${sum_ci_ti_ti_delta_t_1.toFixed(2)}"></div>
+  <div class="col-4">${sum_ci_ti_ti_delta_t_1.toFixed(2)}</div>
 
 
   <br>
 
   <div class="col-6">Mean Residence Time, <span style="border-top: 1px solid black;
   ">t</span> => </div>  
-  <div class="col-6"><input type="text" name="" id="act4-tab3-inp4"></div>
+  <div class="col-4"><input style="width:100%" type="text" name="" id="act4-tab3-inp4"></div>
 
   <br>
 
 
   <div class="col-6">Varience, &sigma;<sup>2</sup> =></div>  
-  <div class="col-6"><input type="text" name="" id="act4-tab3-inp5"></div>
+  <div class="col-4"><input style="width:100%" type="text" name="" id="act4-tab3-inp5"></div>
 
   <br>
 
 
   <div class="col-6">Dispersion Number, (D/uL) => </div>  
-  <div class="col-6"><input type="text" name="" id="act4-tab3-inp6"></div>
+  <div class="col-4"><input style="width:100%" type="text" name="" id="act4-tab3-inp6"></div>
 
   </div>
   </div>
@@ -382,15 +393,18 @@ function verify_summations() {
     //   return;
     // }
     if (!verify_values(parseFloat(val4.value), t_bar_1)) {
-        console.log("please correct the Mean Residence value");
+        console.log(`Mean Residence value ${t_bar_1}`);
+        alert("please correct the Mean Residence value");
         return;
     }
     if (!verify_values(parseFloat(val5.value), sigma_1)) {
-        console.log("please correct the Varience value");
+        console.log(`Varience value ${sigma_1}`);
+        alert("please correct the Varience value");
         return;
     }
     if (!verify_values(parseFloat(val6.value), root_1)) {
-        console.log("please correct the dispersion value value");
+        console.log(`dispersion value value ${root_1}`);
+        alert("please correct the dispersion value value");
         return;
     }
     // pp.addtorightpannel(act5_ob_btn, 3);

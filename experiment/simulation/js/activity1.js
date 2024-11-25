@@ -172,12 +172,13 @@ function load_higlighted_images() {
     a1_labels = [
         new Chemistry.Text("tubular_reactor", new Chemistry.Point(400, 80), canvas),
         new Chemistry.Text("beaker", new Chemistry.Point(1450, 60), canvas),
-        new Chemistry.Text("onductivity_meter", new Chemistry.Point(1650, 730), canvas),
+        new Chemistry.Text("conductivity_meter", new Chemistry.Point(1650, 730), canvas),
         new Chemistry.Text("rotameter", new Chemistry.Point(150, 850), canvas),
-        new Chemistry.Text("tracer_injector", new Chemistry.Point(100, 40), canvas),
-        new Chemistry.Text("centrifugal_pump", new Chemistry.Point(80, 500), canvas),
+        new Chemistry.Text("tracer_injector", new Chemistry.Point(100, 140), canvas),
+        new Chemistry.Text("centrifugal_pump", new Chemistry.Point(80, 480), canvas),
         new Chemistry.Text("storage_tank", new Chemistry.Point(1150, 500), canvas),
     ];
+    a1_labels.map(label => label.font = '22px Arial');
 }
 function a1_random_questions() {
     arrayofrandquestion = [];
